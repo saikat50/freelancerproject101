@@ -71,18 +71,31 @@ module.exports={
 
 		db.getResult(sql,[id],function(result2){
 			callback(result2);
+			//console.log(result2);
 		});
 	},
 	getSpecPost: function(result2,callback){
 
 
-       var arr = 0;
+	   var arr = [];
+		console.log(result2);
 
-		for(var i = 0; i < result2.length; i++){
+		if(result2.length > 0){
 
-			arr[i] = result2[i]['postid'];
+			for(var i = 0; i < result2.length; i++){
+
+				arr[i] = result2[i].postid;
+	
+			}
+
+		}else{
+
+	            arr = 0            
 
 		}
+
+		
+		console.log(arr);
 
 
 		
